@@ -2,10 +2,12 @@
 # coding: utf-8
 #
 # author: kaku
-# date: 年/月/日
+# date: 18/08/02 Fri
 #
 # GitHub:
 #
 #   https://github.com/kakuchange
 #
 # Description:
+#
+#   An object imposes a structure but takes pluggable components.
