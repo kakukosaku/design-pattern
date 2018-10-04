@@ -11,7 +11,8 @@
 # Description:
 #
 #   Design patern of Python implement about abstract factory.
-#   Note:
+# 
+# Note:
 #       This code is total copy from https://github.com/faif/python-patterns this repository
 import random
 
