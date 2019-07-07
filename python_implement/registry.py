@@ -26,9 +26,8 @@ class RegistryHolder(type):
         cls.REGISTRY[new_cls.__name__] = new_cls
         return new_cls
 
-    @classmethod
-    def get_registry(cls):
-        return dict(cls.REGISTRY)
+    def get_registry(self):
+        return dict(self.REGISTRY)
 
 
 class BaseRegisteredClass(metaclass=RegistryHolder):
@@ -43,7 +42,7 @@ class BaseRegisteredClass(metaclass=RegistryHolder):
 def test():
     """Test Function
     # before
-    >>> print(BaseRegisteredClass.__class__.get_registry())
+    >>> print(BaseRegisteredClass.get_registry())
     {'BaseRegisteredClass': <class '__main__.BaseRegisteredClass'>}
     >>> class ClassRegistree(BaseRegisteredClass):
     ...     def __init__(self, *args, **kwargs):
@@ -51,7 +50,7 @@ def test():
     ...
 
     # After inheritance
-    >>> print(ClassRegistree.__class__.get_registry())
+    >>> print(ClassRegistree.get_registry())
     {'BaseRegisteredClass': <class '__main__.BaseRegisteredClass'>, 'ClassRegistree': <class '__main__.ClassRegistree'>}
     """
     # for k in RegistryHolder.REGISTRY:
