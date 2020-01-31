@@ -172,7 +172,7 @@ b. java.net.URLConnection - allows users to decide which protocol to use
 
 Example:
 
-pass
+[Java](src/main/java/com/github/kakusosaku/singleton)
 
 ### Factory Method 工厂方法模式
 

@@ -14,14 +14,15 @@
 #
 # https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
+"""
+Method 1: A decorator
 
-# ---- ---- ---- ---- ----
-# Method 1: A decorator
-# Pros:
-#   - 直观, 灵活度高
-# Cons:
-#   - return a function not a Class!
-# ---- ---- ---- ---- ----
+Pros:
+  - 直观, 灵活度高
+Cons:
+  - return a function not a Class!
+
+"""
 def singleton(class_):
     instance = {}
     def getinstance(*args, **kwargs):
@@ -39,14 +40,16 @@ class Method1Cls:
     pass
 
 
-# ---- ---- ---- ---- ----
-# Method 2: A base class
-# Pros:
-#   - reuse this base class
-#   - true class
-# Cons:
-#   - multiple inheritance can override __new__ method
-# ---- ---- ---- ---- ----
+"""
+Method 2: A base class
+
+Pros:
+  - reuse this base class
+  - true class
+Cons:
+  - multiple inheritance can override __new__ method
+  
+"""
 class SingletonBase:
     _instance = None
 
