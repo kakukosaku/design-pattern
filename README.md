@@ -153,7 +153,10 @@ Common usage:
 
 Example:
 
-pass
+[Java](src/main/java/com/github/kakusosaku/singleton)
+
+[Python](src/main/python/singleton.py)
+
 ### Factory 工厂模式
 
 > Simplified version of Factory Method, Creates objects without exposing the instantiation logic to the client and Refers to the newly created object through a common interface.
@@ -172,9 +175,7 @@ b. java.net.URLConnection - allows users to decide which protocol to use
 
 Example:
 
-[Java](src/main/java/com/github/kakusosaku/singleton)
-
-[Python](src/main/python/singleton.py)
+pass
 
 ### Factory Method 工厂方法模式
 
