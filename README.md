@@ -174,6 +174,8 @@ Example:
 
 [Java](src/main/java/com/github/kakusosaku/singleton)
 
+[Python](src/main/python/singleton.py)
+
 ### Factory Method 工厂方法模式
 
 > Defines an interface for creating objects, but let subclasses to decide which class to instantiate and Refers to the newly created object through a common interface.
