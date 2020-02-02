@@ -165,6 +165,8 @@ When to use:
 
 A framework delegate the creation of objects derived from a common superclass to the factory - we need flexibility in adding new types of objects that must be created by the class.
 
+在面向对象的语言中, 一般通过父类实例化对象, 而工厂模式(简单工厂模式), 无需知道直接父类是谁, 通过工厂类实例化所需对象.
+
 Common usage:
 
 Along with singleton pattern the factory is one of the most used patterns. Almost any application has some factories. Here are a some examples in java:
@@ -181,13 +183,19 @@ pass
 
 > Defines an interface for creating objects, but let subclasses to decide which class to instantiate and Refers to the newly created object through a common interface.
 
+与Factory模式的区别在于, 通过工厂的父子类继承, override工厂父类的某些方法, 达到实现"新工厂"产生定制的对象.
+
 ### Abstract Factory 抽象工厂模式
 
 > Offers the interface for creating a family of related objects, without explicitly specifying their classes.
 
+抽象共同接口`FactoryInterface`表示工厂应具有的创建方法, 然后由`AbstractFactory`作为`FactoryInterface`实现类`SomeFactory`的上层建筑, 达到屏蔽`SomeFactory`实现细节的目的. 使得在使用一系列工厂类时, 屏蔽具体工厂类实现细节, 更易用&解耦.
+
 ### Builder 建造者模式
 
 > Defines an instance for creating an object but letting subclasses decide which class to instantiate and Allows a finer control over the construction process.
+
+将复杂对象实例化过程(例如: constructor 需要很多参数, constructor 有很多处理步骤), 通过建造者模式, 拆解, 更清晰的实例化过程&更集中, 可复用的实例化复杂对象.
 
 ### Prototype 原型模式
 
