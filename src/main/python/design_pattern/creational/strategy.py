@@ -35,7 +35,7 @@ class StrategyContainerMeta(type):
                             "{}: init failed, you can only spefic only one default impl cls.".format(cls_name))
                     _strategy_mapping[mcs.DEFAULT_CLS_KEY] = attr_cls
 
-                kv_pairs = attr_cls._strategy.items()
+                kv_pairs = list(attr_cls._strategy.items())
                 kv_pairs.sort(key=lambda x: x[0])
                 urlencoded_kv = parse.urlencode(kv_pairs)
                 _strategy_mapping[urlencoded_kv] = attr_cls
@@ -50,8 +50,7 @@ class StrategyContainerMeta(type):
         return cls
 
 
-class StrategyContainerBase(object):
-    __metaclass__ = StrategyContainerMeta
+class StrategyContainerBase(object, metaclass=StrategyContainerMeta):
 
     class Demo(object):
         _strategy = {
@@ -64,7 +63,7 @@ class StrategyContainerBase(object):
             if field in input_data:
                 strategy_data[field] = input_data[field]
 
-        kv_pairs = strategy_data.items()
+        kv_pairs = list(strategy_data.items())
         kv_pairs.sort(key=lambda x: x[0])
         urlencoded_kv = parse.urlencode(kv_pairs)
         actual_cls = cls._strategy_mapping.get(
@@ -152,8 +151,7 @@ class StrategyFactoryMeta(type):
         return super(StrategyFactoryMeta, mcs).__new__(mcs, cls_name, bases, attrs)
 
 
-class StrategyFactory(object):
-    __metaclass__ = StrategyFactoryMeta
+class StrategyFactory(object, metaclass=StrategyFactoryMeta):
 
     actual_impl_cls_map = dict()
     actual_impl_cls_default = None

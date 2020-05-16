@@ -1,6 +1,7 @@
 import unittest
 
-from creational.strategy import StrategyContainerBase, StrategyConfig, StrategyFactory, strategy_factory_register
+from design_pattern.creational.strategy import StrategyContainerBase, StrategyConfig, StrategyFactory, \
+    strategy_factory_register
 
 
 class Validator:
@@ -11,7 +12,8 @@ class Validator:
 
 class License:
     MARSCO = "MARSCO"
-    IB = "IB"
+    USTS = "USTS"
+    TBNZ = "TBNZ"
 
 
 class Clearing:
@@ -31,13 +33,13 @@ class TestStrategyContainer(unittest.TestCase):
             class Container(StrategyContainerBase):
                 class T(Validator):
                     _strategy = {
-                        "license": License.Marsco,
+                        "license": License.MARSCO,
                         "clearing": Clearing.IB,
                         # "default": True,
                     }
 
             test_data = {
-                "license": License.Marsco,
+                "license": License.MARSCO,
                 "clearing": Clearing.IB,
             }
             Container(test_data)
@@ -47,20 +49,20 @@ class TestStrategyContainer(unittest.TestCase):
             class Container(StrategyContainerBase):
                 class T1(Validator):
                     _strategy = {
-                        "license": License.Marsco,
+                        "license": License.MARSCO,
                         "clearing": Clearing.IB,
                         "default": True,
                     }
 
                 class T2(Validator):
                     _strategy = {
-                        "license": License.Marsco,
+                        "license": License.MARSCO,
                         "clearing": Clearing.IB,
                         "default": True,
                     }
 
             test_data = {
-                "license": License.Marsco,
+                "license": License.MARSCO,
                 "clearing": Clearing.IB,
             }
             Container(test_data)
@@ -76,14 +78,14 @@ class TestStrategyContainer(unittest.TestCase):
 
             class T2(Validator):
                 _strategy = {
-                    "license": License.Marsco,
+                    "license": License.MARSCO,
                     "clearing": Clearing.IB,
                     "default": False,
                 }
 
             class T3(Validator):
                 _strategy = {
-                    "license": License.Marsco,
+                    "license": License.MARSCO,
                     "clearing": Clearing.MARSCO,
                     "default": False,
                 }
@@ -96,14 +98,14 @@ class TestStrategyContainer(unittest.TestCase):
         self.assertIsInstance(c1, Container.T1)
 
         test_data2 = {
-            "license": License.Marsco,
+            "license": License.MARSCO,
             "clearing": Clearing.IB,
         }
         c2 = Container(test_data2)
         self.assertIsInstance(c2, Container.T2)
 
         test_data3 = {
-            "license": License.Marsco,
+            "license": License.MARSCO,
             "clearing": Clearing.MARSCO,
         }
         c3 = Container(test_data3)
@@ -111,7 +113,7 @@ class TestStrategyContainer(unittest.TestCase):
 
         # switch to default cls
         test_data4 = {
-            "license": License.Marsco,
+            "license": License.MARSCO,
             # "clearing": Clearing.MARSCO,
         }
         c4 = Container(test_data4)
@@ -127,9 +129,9 @@ class TestStrategyInterface(unittest.TestCase):
         s1 = StrategyConfig(category=Category.INDIVIDUAL,
                             license=License.TBNZ, clearing=Clearing.IB)
         s2 = StrategyConfig(category=Category.INDIVIDUAL,
-                            license=License.Marsco, clearing=Clearing.MARSCO)
+                            license=License.MARSCO, clearing=Clearing.MARSCO)
         s3 = StrategyConfig(category=Category.RIA,
-                            license=License.Marsco, clearing=Clearing.IB)
+                            license=License.MARSCO, clearing=Clearing.IB)
 
         strategy_config = {
             "category": Category.INDIVIDUAL,
@@ -152,7 +154,7 @@ class TestStrategyInterface(unittest.TestCase):
         self.assertTrue(2 == strategy_map[s2])
         self.assertTrue(
             3 == strategy_map[StrategyConfig(
-                category=Category.RIA, license=License.Marsco, clearing=Clearing.IB)]
+                category=Category.RIA, license=License.MARSCO, clearing=Clearing.IB)]
         )
 
 
