@@ -39,7 +39,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "designPatternSayHi=design_pattern.greet:greet"
+            "designPatternSayHi = design_pattern.greet:greet"
         ]
     },
 
