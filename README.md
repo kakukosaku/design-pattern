@@ -42,11 +42,11 @@ Behavioral Design Patterns:
 3. [Iterator](#Iterator-迭代器模式)
 4. [Mediator](#Mediator-中介模式)
 5. [Memento](#Memento)
-5. [Observer](#Observer-观察者模式)
-8. [Visitor](#Visitor-访客模式)
-6. [Strategy](#Strategy-策略模式)
-7. [Template Method]()
-9. [Null Object]()
+6. [Observer](#Observer-观察者模式)
+7. [Visitor](#Visitor-访客模式)
+8. [Strategy](#Strategy-策略模式)
+9. [State](#State-状态模式)
+10. [Template Method](#Template-Method-模板方法模式)
 
 # References
 
@@ -434,4 +434,50 @@ Strategy pattern allows you to switch the algorithm or strategy based upon the s
 
 示例:
 
-[python]()
+[python](src/main/python/design_pattern/creational/strategy.py)
+
+### State 状态模式
+
+### Template Method 模板方法模式
+
+实质:
+
+定义标准流程, 而把实现交给子类.
+
+Template method defines the skeleton of how a certain algorithm could be performed, but defers the implementation of those steps to children classes.
+
+使用场景:
+
+证券公司开户业务的标准Pipeline: 数据校验 - 数据持久化(write/update) - 消息通知其它系统(受理)
+
+示例:
+
+pass
+
+---
+
+写在结尾:
+
+不知不觉, 已经工作三年了...最近2年, 接手了很多老代码/老系统, 也写了更多的新代码/新系统. 对于设计良好(糟糕)的代码对于后续迭代带来的便利(糟心)也有深有体会.
+
+从一开始吐槽老代码 -> 想要大刀阔斧重构 -> 有心无力, 平行拓展 -> 新写的代码比例逐渐增高, 业务压力/重构压力逐渐下降, 着手重构整个项目, 对设计模式也有了一些我自己的理解:
+
+1. 设计模式的基础: 理解面向对象编程(Object-Oriented Programming, OOP)的思想!
+ 
+    各种设计模式无不以封装, 继承, 多态为核心的OOP思想进行代码实现, 这样的代码实现同时反映的是对问题的思考(抽象). 正如, 你如何命名一个对象, 反映的是你对它的理解
+
+2. 设计模式的应用前提: 正确理解业务模型!
+
+    对业务流程, 业务实际意义, 业务可能的拓展边界的认知, 对**合理应用设计模式**至关重要! 正如: 设计模式只是面对一些典型问题的处理方式典型方式, 这些设计模式是经过实践检验, 为大家熟知的.
+
+    正确的理解了业务模型, 正确的使用设计模式, 带来的好处, 只有体会过糟糕的项目人才会体会...
+
+3. 设计模式的最佳实践: 不同(语言)的实现!
+
+    如果语言之间只是语法的区别, 我想, 它应该是没有出现的必要/合理性. 我以Python为主力开发语言的同时, 陆续(先后)学习了Go, C/C++, Java等后端语言, 也因需求看过点Javascript.
+    
+    当然单说语言的好坏, 怕是能引发无休止的论战. 我提到这些语言, 只是想指出这一点:
+    
+    不同的语言(语法), 设计思想的不同, 使得设计模式的具体实现 "看起来" 会有不同, 但它们都体现了设计核心目的: 使得代码可复用, 易维护, 易扩展.
+
+以上仅代表个人理解
