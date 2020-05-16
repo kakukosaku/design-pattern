@@ -1,4 +1,4 @@
-package com.github.kakusosaku.singleton;
+package com.github.kakusosaku.designpattern.creational.singleton;
 
 import org.junit.Test;
 

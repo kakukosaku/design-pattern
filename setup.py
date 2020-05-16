@@ -10,16 +10,14 @@
 #
 # Description:
 #
-from setuptools import find_packages, setup
+from setuptools import find_namespace_packages, setup
 
 setup(
-    name="design_pattern",
+    name="designpattern",
     version="0.1.1",
-    # packages=["example_project", "example_package_a", "example_package_b"],
-    packages=find_packages("src"),
+    packages=find_namespace_packages(where="src/main/python"),
     package_dir={
-        "main": "src/main/python/",
-        "test": "src/test/python/",
+        "": "src/main/python"
     },
     install_requires=[
         #    "tornado>=4.0",
@@ -41,7 +39,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "designPatternSayHi=main.greet:greet"
+            "designPatternSayHi=design_pattern.greet:greet"
         ]
     },
 

@@ -1,4 +1,4 @@
-package com.github.kakusosaku.singleton;
+package com.github.kakusosaku.designpattern.creational.singleton;
 
 /**
  * 利用类加载机制的"懒加载"的 单例模式
