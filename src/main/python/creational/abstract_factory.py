@@ -14,6 +14,7 @@
 # 
 # Note:
 #       This code is total copy from https://github.com/faif/python-patterns this repository
+#
 import random
 
 

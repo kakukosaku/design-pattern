@@ -10,6 +10,7 @@ target/
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info
 
 # Mac
 .DS_Store
