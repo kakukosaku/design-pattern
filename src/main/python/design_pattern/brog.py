@@ -6,7 +6,7 @@
 #
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
 # Description:
 #

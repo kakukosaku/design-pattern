@@ -6,11 +6,11 @@
 #
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
 # Description:
 #
-#   Design patern of Python implement about abstract factory.
+#   Design pattern of Python implement about abstract factory.
 # 
 # Note:
 #       This code is total copy from https://github.com/faif/python-patterns this repository
@@ -19,7 +19,6 @@ import random
 
 
 class PetShop(object):
-
     """A pet shop"""
 
     def __init__(self, animal_factory=None):
@@ -36,6 +35,7 @@ class PetShop(object):
 
 
 class Dog(object):
+
     def speak(self):
         return "woof"
 
@@ -44,6 +44,7 @@ class Dog(object):
 
 
 class Cat(object):
+
     def speak(self):
         return "meow"
 
@@ -73,7 +74,8 @@ if __name__ == "__main__":
         shop.show_pet()
         print("=" * 20)
 
-### OUTPUT ###
+# OUTPUT #
+# ====================
 # We have a lovely Cat
 # It says meow
 #

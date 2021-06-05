@@ -6,7 +6,7 @@
 #
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
 # Description:
 #
@@ -21,16 +21,19 @@ Pros:
   - 直观, 灵活度高
 Cons:
   - return a function not a Class!
-
 """
+
+
 def singleton(class_):
     instance = {}
-    def getinstance(*args, **kwargs):
+
+    def get_instance(*args, **kwargs):
         """Method 1 success!"""
         if class_ not in instance:
             instance[class_] = class_(*args, **kwargs)
         return instance[class_]
-    return getinstance
+
+    return get_instance
 
 
 @singleton
@@ -48,8 +51,9 @@ Pros:
   - true class
 Cons:
   - multiple inheritance can override __new__ method
-  
 """
+
+
 class SingletonBase:
     _instance = None
 
@@ -65,17 +69,20 @@ class Method2Cls(SingletonBase):
     pass
 
 
-# ---- ---- ---- ---- ----
-# Method 3: A base class
-# Pros:
-#   - reuse this base class
-#   - true class
-#   - cover inheritance
-# Cons:
-#   - may by more complicated
-# ---- ---- ---- ---- ----
+"""
+Method 3: A base class
+Pros:
+  - reuse this base class
+  - true class
+  - cover inheritance
+Cons:
+  - may by more complicated
+"""
+
+
 class SingletonMeta(type):
     _instance = {}
+
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instance:
             cls._instance[cls] = super().__call__(*args, **kwargs)
@@ -83,8 +90,9 @@ class SingletonMeta(type):
 
 
 class Method3Cls(metaclass=SingletonMeta):
-    __doc__ = ["Method 3 faild!", "Method 3 success!"]
+    __doc__ = ["Method 3 failed!", "Method 3 success!"]
     pass
+
 
 def test(fakecls):
     try:

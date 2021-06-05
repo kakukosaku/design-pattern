@@ -6,7 +6,7 @@
 #
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
 # Description:
 #
@@ -17,13 +17,13 @@ import doctest
 class RegistryHolder(type):
     REGISTRY = {}
 
-    def __new__(cls, name, bases, attrs):
-        new_cls = type.__new__(cls, name, bases, attrs)
+    def __new__(mcs, name, bases, attrs):
+        new_cls = type.__new__(mcs, name, bases, attrs)
         """
             Here the name of the class is used as key but it could be any class
             parameter.
         """
-        cls.REGISTRY[new_cls.__name__] = new_cls
+        mcs.REGISTRY[new_cls.__name__] = new_cls
         return new_cls
 
     def get_registry(self):
@@ -59,5 +59,5 @@ def test():
 
 
 if __name__ == "__main__":
-    print('python3 strategy.py -v get more information :)')
+    print('python3 registry.py -v get more information :)')
     doctest.testmod()

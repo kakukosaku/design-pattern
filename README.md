@@ -2,6 +2,13 @@
 
 For create more concise code, you should learn Design Patterns.
 
+# References
+
+- https://www.oodesign.com/
+- https://github.com/kamranahmedse/design-patterns-for-humans
+- https://java-design-patterns.com/
+- https://www.gofpatterns.com/design-patterns/module2/behavioral-creational-structural.php
+
 # Overview
 
 **Design Principles**
@@ -14,9 +21,15 @@ For create more concise code, you should learn Design Patterns.
 6. [迪米特原则](#迪米特原则)
 7. [组合/聚合原则](#组合聚合原则)
 
+总结: S.O.I.L.D(single, open+close, interface, L, Dependency) + 组合聚合优于继承 + 一个对象应该保持对其它对象最少的了解.
+
 **Design Patterns**
 
 Creational Design Patterns: 
+
+These design patterns provide ways to create objects while hiding the creation logic, instead of instantiating objects
+directly using the new operator. This gives the program more flexibility in deciding which objects need to be created
+for a given use case.
 
 1. [Singleton](#Singleton-单例模式)
 2. [Simple Factory](#Simple-Factory-工厂模式)
@@ -28,14 +41,18 @@ Creational Design Patterns:
 
 Structural Design Patterns:
 
+These design patterns deal with class and object composition.
+
 1. [Adapter](#Adapter-适配器模式)
 2. [Bridge](#Bridge-桥接模式)
 3. [Composite](#Composite-组成模式)
 4. [Decorator](#Decorator-装饰器模式)
-5. [Flyweight](#Flyweight)
-6. [Proxy](#Proxy-代理模式)
+5. Flyweight
+6. Proxy 代理模式
 
 Behavioral Design Patterns:
+
+These design patterns are specifically concerned with communication between objects.
 
 1. [Chain of Responsibility](#Chain-of-Responsibility-责任链模式)
 2. [Command](#Command-命令模式)
@@ -47,14 +64,6 @@ Behavioral Design Patterns:
 8. [Strategy](#Strategy-策略模式)
 9. [State](#State-状态模式)
 10. [Template Method](#Template-Method-模板方法模式)
-
-# References
-
-- https://www.oodesign.com/
-
-- https://github.com/kamranahmedse/design-patterns-for-humans
-
-- https://java-design-patterns.com/
 
 UML Syntax Reference:
 
@@ -129,7 +138,7 @@ UML Syntax Reference:
 
 一个对象应该对其它对象保持最少的了解
 
-### 组合/聚合原则
+### 组合聚合原则
 
 组合/聚合优于继承, 继承将父类的细节显露给子类, 将一项功能的实现改为多个类的组合/聚合, 降低了类与类之间的耦合程度, 达到高内聚低耦合.
 
@@ -277,7 +286,7 @@ pass
 
 pass
 
-## decorator 装饰器模式
+## Decorator 装饰器模式
 
 实质:
 
