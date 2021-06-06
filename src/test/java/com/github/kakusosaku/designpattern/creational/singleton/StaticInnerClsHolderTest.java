@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
  * @author kaku
  * Date    2020-01-30
  */
-public class StaticInnerClsSingletonTest {
+public class StaticInnerClsHolderTest {
 
     @Test
     public void getInstanceTest() {
-        StaticInnerClsSingleton inst1 = StaticInnerClsSingleton.getInstance();
-        StaticInnerClsSingleton inst2 = StaticInnerClsSingleton.getInstance();
+        StaticInnerClsHolder inst1 = StaticInnerClsHolder.getInstance();
+        StaticInnerClsHolder inst2 = StaticInnerClsHolder.getInstance();
         assertEquals(inst1, inst2);
     }
 }

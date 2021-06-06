@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
  * @author kaku
  * Date    2020-01-31
  */
-public class ThreadCareSingletonTest {
+public class ThreadSafeOnInstanceTest {
 
     @Test
     public void getInstanceTest() {
-        ThreadCareSingleton inst1 = ThreadCareSingleton.getInstance();
-        ThreadCareSingleton inst2 = ThreadCareSingleton.getInstance();
+        ThreadSafeOnInstance inst1 = ThreadSafeOnInstance.getInstance();
+        ThreadSafeOnInstance inst2 = ThreadSafeOnInstance.getInstance();
         assertEquals(inst1, inst2);
     }
 }
