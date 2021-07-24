@@ -16,7 +16,7 @@ public class OrcWeapon implements Weapon {
 
     @Override
     public WeaponType getWeaponType() {
-        return null;
+        return weaponType;
     }
 
     @Override
